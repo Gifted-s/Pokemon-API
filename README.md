@@ -9,7 +9,6 @@ Professor Oak is in trouble! A wild Blastoise wreaked havoc in the server room a
 ### Tasks
 
 -   Implement assignment using:
-    -   Language: **Go**
     -   Framework: **any framework**
 -   Create a Pokémon Model that includes all fields outlined in `/Data/pokemon.csv`
 -   Parse the .csv file and create entries for each row based on the following conditions:
