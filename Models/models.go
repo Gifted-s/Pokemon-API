@@ -19,3 +19,13 @@ type Pokemon struct {
 	Generation int                `json:"generation" bson:"generation ,omitempty"`
 	Lengendary bool               `json:"lengendary" bson:"lengendary ,omitempty"`
 }
+
+
+type Configuration struct {
+    Db_Config  Db_Config_Struct
+}
+
+type Db_Config_Struct struct {
+	Pokemon_Collection_Name string
+	Db_Name string
+}
