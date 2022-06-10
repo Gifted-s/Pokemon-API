@@ -2,21 +2,18 @@ package database
 
 import (
 	"pokemon/m/v1/configs"
-
-	"go.mongodb.org/mongo-driver/mongo"
+	"pokemon/m/v1/models"
 )
 
-type Collections struct {
-	PokeMons  *mongo.Collection
-}
-func GetDBCollections() Collections {
+
+func GetDBCollections() models.Collections {
 	dbClient := ConnectMongoDB()
 
 	dbName := configs.Config.Db_Config.Db_Name
 	pokeMonCollectionName := configs.Config.Db_Config.Pokemon_Collection_Name
-	
+
 	pokemons := dbClient.Database(dbName).Collection(pokeMonCollectionName)
-	var collections Collections
+	var collections models.Collections
 	collections.PokeMons = pokemons
 	return collections
 }

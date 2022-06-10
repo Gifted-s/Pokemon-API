@@ -1,6 +1,7 @@
 package models
 
 import (
+	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
@@ -28,4 +29,8 @@ type Configuration struct {
 type Db_Config_Struct struct {
 	Pokemon_Collection_Name string
 	Db_Name string
+}
+
+type Collections struct {
+	PokeMons  *mongo.Collection
 }
