@@ -1,7 +1,11 @@
 package configs
 
-import "pokemon/m/v1/models"
+import (
+"pokemon/m/v1/models")
 
+
+
+// getting env
 var Config = models.Configuration {
 
 	Db_Config :models.Db_Config_Struct{
@@ -9,6 +13,6 @@ var Config = models.Configuration {
 	Db_Name:"pokemon_db",
     },
 
-	
+
 }
 
