@@ -18,7 +18,7 @@ type Pokemon struct {
 	DefenceSpeed int                `json:"defenceSpeed" bson:"defenceSpeed ,omitempty"`
 	Speed        int                `json:"speed" bson:"speed ,omitempty"`
 	Generation   int                `json:"generation" bson:"generation ,omitempty"`
-	Lengendary   bool               `json:"lengendary" bson:"lengendary ,omitempty"`
+	Lengendary   bool               `json:"lengendary" bson:"lengendary"`
 }
 
 type Configuration struct {

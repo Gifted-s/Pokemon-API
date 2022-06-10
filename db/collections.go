@@ -1,4 +1,4 @@
-package database
+package db
 
 import (
 	"pokemon/m/v1/configs"

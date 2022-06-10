@@ -1,4 +1,4 @@
-package database
+package db
 
 import (
 	"context"
@@ -11,7 +11,7 @@ import (
 )
 
 func ConnectMongoDB() *mongo.Client {
-	var dbName = os.Getenv("DB_NAME")
+	var dbName = os.Getenv("DB_USERNAME")
     var dbPassword = os.Getenv("DB_PASSWORD")
 
 	dbConnectionURI :="mongodb+srv://"+dbName+":"+dbPassword+"@cluster0.jciel9m.mongodb.net/?retryWrites=true&w=majority"
