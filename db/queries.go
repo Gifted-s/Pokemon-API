@@ -3,31 +3,32 @@ package db
 import (
 	"context"
 	"fmt"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"time"
+
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
-	 "time"
 )
 
-func GetPokeMons(queryBody map[string][]string) []primitive.M {
-	fmt.Print(queryBody["search"][0])
+func GetPokeMons(queryBody map[string][]string) ([]primitive.M, error) {
 	pokemonCollection := GetDBCollections().PokeMons
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-
-	matchStage := bson.D{{"$search", bson.D{{"index", "nameSearchIndex"}, {"text",bson.M{
-        "query": "Buasaur",
-		"path": bson.M{
-			"wildcard": "*",
-		},
-        "fuzzy": bson.M{},
+	fmt.Print(queryBody["search"][0])
+	matchStage := bson.D{{"$search", bson.D{{"index", "nameSearchIndex"}, {"text", bson.M{
+		"query": queryBody["search"][0],
+		"path":  "name",
+		"fuzzy": bson.M{},
 	}}}}}
-	showInfoCursor, err := pokemonCollection.Aggregate(ctx, mongo.Pipeline{matchStage})
+	pokeMonInfoCursor, err := pokemonCollection.Aggregate(ctx, mongo.Pipeline{matchStage})
 	if err != nil {
-		panic(err)
+		return []primitive.M{}, err
 	}
-	var showsWithInfo []bson.M
-	if err = showInfoCursor.All(ctx, &showsWithInfo); err != nil {
-		panic(err)
+	var pokemonInfo []bson.M
+	if err = pokeMonInfoCursor.All(ctx, &pokemonInfo); err != nil {
+		return []primitive.M{}, err
 	}
-	return showsWithInfo
+	if len(pokemonInfo) == 0 {
+		return []primitive.M{}, nil
+	}
+	return pokemonInfo, nil
 }

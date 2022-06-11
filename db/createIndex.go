@@ -7,8 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func SetupDB (queryBody map[string][]string) {
-	fmt.Print(queryBody["search"][0])
+func CreateIndex () {
 	pokemonCollection := GetDBCollections().PokeMons
 	model := mongo.IndexModel{Keys: bson.D{{"hp", 1},  {"attack", 1}, {"defense", 1} }}
 	name, err := pokemonCollection.Indexes().CreateOne(context.TODO(), model)

@@ -21,6 +21,16 @@ type Pokemon struct {
 	Lengendary   bool               `json:"lengendary" bson:"lengendary"`
 }
 
+type GetPokemonsSuccessResponseStruc struct {
+	Status   int           `json:"status,omitempty"`
+	Pokemons []primitive.M `json:"pokemons" bson:"pokemons"`
+}
+
+type ErrorResponseStruc struct {
+	Status int   `json:"status,omitempty"`
+	Error  error `json:"error,omitempty"`
+}
+
 type Configuration struct {
 	Db_Config Db_Config_Struct
 }
