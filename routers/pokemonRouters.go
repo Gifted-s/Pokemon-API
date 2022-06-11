@@ -6,7 +6,6 @@ import (
 )
 
 
-
 func PokemonRouter(r *mux.Router) {
 	r.HandleFunc("/pokemon", controller.GetPokemonsController).Methods("GET")
 }
