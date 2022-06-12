@@ -19,8 +19,12 @@ func GetPokeMons(queryBody map[string][]string) ([]primitive.M, error) {
 				primitive.E{Key: "index", Value: "nameSearchIndex"},
 				primitive.E{Key: "text", Value: bson.M{
 					"query": queryBody["search"][0],
-					"path":  "name",
-					"fuzzy": bson.M{},
+					"path": bson.M{
+						"wildcard": "*",
+					  },
+					 "fuzzy": bson.M{
+						 "maxEdits": 10,
+					 },
 				}}}}}
 	pokeMonInfoCursor, err := pokemonCollection.Aggregate(ctx, mongo.Pipeline{matchStage})
 	if err != nil {

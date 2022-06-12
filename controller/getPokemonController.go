@@ -27,5 +27,4 @@ func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 	}
-
 }
