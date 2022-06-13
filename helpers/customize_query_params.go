@@ -2,7 +2,6 @@ package helpers
 
 import (
 	"errors"
-	"pokemon/m/v1/utils"
 	"strings"
 	"strconv"
 )
@@ -16,7 +15,7 @@ func CustomizeQueryParams(queryParams map[string][]string) (map[string][]string,
 		if index1 != -1 {
 			key = k[0:index1]
 			operator := k[index1+1 : len(k)-1]
-			if customizedKey, ok := utils.URLOperatorToMongoDBOperatorMatcher()[operator]; ok {
+			if customizedKey, ok := URLOperatorToMongoDBOperatorMatcher()[operator]; ok {
 				value = []string{
 					customizedKey,
 					v[0],

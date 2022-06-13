@@ -27,7 +27,6 @@ func StorePokemonInDB() {
 	// Insert remaining row
 	for {
 		rec, err := csvReader.Read()
-		// fmt.Print(rec)
 		if err == io.EOF {
 			break
 		}

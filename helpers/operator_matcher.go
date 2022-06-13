@@ -1,5 +1,4 @@
-package utils
-
+package helpers
 
 func URLOperatorToMongoDBOperatorMatcher()map[string]string{
   operatorMap := map[string]string{
