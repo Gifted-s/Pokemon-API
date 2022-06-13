@@ -49,7 +49,7 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 			defense += 5
 		}
 	}
-	pokemanStruct := models.Pokemon{
+	pokemon := models.Pokemon{
 		ID:           primitive.NewObjectID(),
 		Name:         name,
 		Type1:        type1,
@@ -64,6 +64,6 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 		Generation:   generation,
 		Lengendary:   false,// Note we don't want pokemons with legendary type
 	}
-	return pokemanStruct, true
+	return pokemon, true
 
 }
