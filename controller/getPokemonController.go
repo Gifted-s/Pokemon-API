@@ -2,7 +2,6 @@ package controller
 
 import (
 	"encoding/json"
-	//"fmt"
 	"net/http"
 	"pokemon/m/v1/db"
 	"pokemon/m/v1/helpers"
@@ -20,7 +19,7 @@ func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 	}
-	pokemons, err :=  db.GetPokeMons(customParams)
+	pokemons, err := db.GetPokeMons(customParams)
 	if err != nil {
 		resp := models.ErrorResponseStruc{Status: 400, Error: err}
 		err := json.NewEncoder(w).Encode(resp)
@@ -28,7 +27,9 @@ func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 	} else {
-		resp := models.GetPokemonsSuccessResponseStruc{Status: 200, Pokemons: pokemons}
+		pokemonsWithEditDistance := helpers.ComputeLevenshteinDistance(pokemons, customParams["search"][0])
+		sortedPokemonsBasedonEditDistance := helpers.SortPokemonsBasedOnEditDistance(pokemonsWithEditDistance)
+		resp := models.GetPokemonsSuccessResponseStruc{Status: 200, Pokemons: sortedPokemonsBasedonEditDistance}
 		err := json.NewEncoder(w).Encode(resp)
 		if err != nil {
 			panic(err)

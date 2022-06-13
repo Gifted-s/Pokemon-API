@@ -25,7 +25,7 @@ type Pokemon struct {
 
 type GetPokemonsSuccessResponseStruc struct {
 	Status   int           `json:"status,omitempty"`
-	Pokemons []primitive.M `json:"pokemons" bson:"pokemons"`
+	Pokemons [] PokemonsWithEditDistanceStruct`json:"pokemons" bson:"pokemons"`
 }
 
 type ErrorResponseStruc struct {
@@ -50,4 +50,9 @@ type Collections struct {
 type GetPokemonQueryFormatterStruct struct{
 	QueryCondition []bson.M
     Options  *options.FindOptions
+}
+
+type	PokemonsWithEditDistanceStruct  struct {
+	EditDistance int
+	Pokemon
 }
