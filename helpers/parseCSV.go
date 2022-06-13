@@ -15,7 +15,7 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 	total, _ := strconv.Atoi(rec[4])
 	hp, _ := strconv.Atoi(rec[5])
 	attack, _ := strconv.Atoi(rec[6])
-	defence, _ := strconv.Atoi(rec[7])
+	defense, _ := strconv.Atoi(rec[7])
 	attackSpeed, _ := strconv.Atoi(rec[8])
 	defenceSpeed, _ := strconv.Atoi(rec[9])
 	speed, _ := strconv.Atoi(rec[10])
@@ -46,7 +46,7 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 	if char := name[0:1]; char == "G" {
 		nameRunes := []rune(name)
 		for i := 1; i < len(nameRunes); i++ {
-			defence += 5
+			defense += 5
 		}
 	}
 	pokemanStruct := models.Pokemon{
@@ -57,7 +57,7 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 		Total:        total,
 		HP:           hp,
 		Attack:       attack,
-		Defence:      defence,
+		Defense:      defense,
 		AttackSpeed:  attackSpeed,
 		DefenceSpeed: defenceSpeed,
 		Speed:        speed,

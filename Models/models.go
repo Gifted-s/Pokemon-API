@@ -13,7 +13,7 @@ type Pokemon struct {
 	Total        int                `json:"total" bson:"total,omitempty"`
 	HP           int                `json:"hp" bson:"hp,omitempty"`
 	Attack       int                `json:"attack" bson:"attack,omitempty"`
-	Defence      int                `json:"defence" bson:"defence,omitempty"`
+	Defense      int                `json:"defense" bson:"defense,omitempty"`
 	AttackSpeed  int                `json:"attackSpeed" bson:"attackSpeed,omitempty"`
 	DefenceSpeed int                `json:"defenceSpeed" bson:"defenceSpeed,omitempty"`
 	Speed        int                `json:"speed" bson:"speed,omitempty"`
