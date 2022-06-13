@@ -22,7 +22,7 @@ func CustomizeQueryParams(queryParams map[string][]string) (map[string][]string,
 					v[0],
 				}
 			} else {
-				return nil, errors.New(operator + " " + ": is not a valid operator please select operator from this option [gte | lte | gt | lt | eq | ne ]")
+				return nil, errors.New(operator + ": is not a valid operator please select operator from these [gte | lte | gt | lt | eq | ne ]")
 			}
 
 		} else if k == "page" {

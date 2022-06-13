@@ -30,7 +30,7 @@ type GetPokemonsSuccessResponseStruc struct {
 
 type ErrorResponseStruc struct {
 	Status int   `json:"status,omitempty"`
-	Error  error `json:"error,omitempty"`
+	ErrorMsg  string `json:"error"`
 }
 
 type Configuration struct {
@@ -53,6 +53,6 @@ type GetPokemonQueryFormatterStruct struct{
 }
 
 type	PokemonsWithEditDistanceStruct  struct {
-	EditDistance int
+	EditDistance int `json:"editDistance"`
 	Pokemon
 }
