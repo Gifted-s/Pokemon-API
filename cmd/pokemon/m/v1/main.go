@@ -14,7 +14,7 @@ func main() {
 	if err != nil {
 	  log.Panic("Error loading .env file")
 	}
-	// helpers.StorePokemonInDB()
+	//helpers.StorePokemonInDB()
     created, err:= server.SetupServer()
 	if !created{
 		log.Panic(err)

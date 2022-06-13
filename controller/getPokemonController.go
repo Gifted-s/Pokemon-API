@@ -10,10 +10,17 @@ import (
 )
 
 func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
-	queryParams := r.URL.Query()
-	customParams := helpers.CustomizeQueryParams(queryParams)
-	pokemons, err := db.GetPokeMons(customParams)
 	w.Header().Set("Content-Type", "application/json")
+	queryParams := r.URL.Query()
+	customParams, err := helpers.CustomizeQueryParams(queryParams)
+	if err != nil {
+		resp := models.ErrorResponseStruc{Status: 400, Error: err}
+		err := json.NewEncoder(w).Encode(resp)
+		if err != nil {
+			panic(err)
+		}
+	}
+	pokemons, err := db.GetPokeMons(customParams)
 	if err != nil {
 		resp := models.ErrorResponseStruc{Status: 400, Error: err}
 		err := json.NewEncoder(w).Encode(resp)
