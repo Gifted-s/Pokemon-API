@@ -1,10 +1,10 @@
 package models
 
 import (
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/bson"
 )
 
 type Pokemon struct {
@@ -24,13 +24,13 @@ type Pokemon struct {
 }
 
 type GetPokemonsSuccessResponseStruc struct {
-	Status   int           `json:"status,omitempty"`
-	Pokemons [] PokemonsWithEditDistanceStruct`json:"pokemons" bson:"pokemons"`
+	Status   int                              `json:"status,omitempty"`
+	Pokemons []PokemonsWithEditDistanceStruct `json:"pokemons" bson:"pokemons"`
 }
 
 type ErrorResponseStruc struct {
-	Status int   `json:"status,omitempty"`
-	ErrorMsg  string `json:"error"`
+	Status   int    `json:"status,omitempty"`
+	ErrorMsg string `json:"error"`
 }
 
 type Configuration struct {
@@ -47,12 +47,12 @@ type Collections struct {
 	PokeMons *mongo.Collection
 }
 
-type GetPokemonQueryFormatterStruct struct{
+type GetPokemonQueryFormatterStruct struct {
 	QueryCondition []bson.M
-    Options  *options.FindOptions
+	Options        *options.FindOptions
 }
 
-type	PokemonsWithEditDistanceStruct  struct {
+type PokemonsWithEditDistanceStruct struct {
 	EditDistance int `json:"editDistance"`
 	Pokemon
 }

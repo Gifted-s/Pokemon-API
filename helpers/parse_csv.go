@@ -64,7 +64,6 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 		Generation:   generation,
 		Lengendary:   false,// Note we don't want pokemons with legendary type
 	}
-	// fmt.Print(pokemanStruct)
 	return pokemanStruct, true
 
 }

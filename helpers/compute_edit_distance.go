@@ -15,5 +15,4 @@ func ComputeLevenshteinDistance(pokemons []models.Pokemon, searchWord string) []
 		})
 	}
 	return pokemonsWithWithEditDistanceSlice
-
 }
