@@ -3,12 +3,12 @@ package helpers
 import (
 	"context"
 	"encoding/csv"
+	"pokemon/m/v1/db"
 	//"fmt"
-    "fmt"
+	"fmt"
 	"io"
 	"log"
 	"os"
-	"pokemon/m/v1/db"
 )
 
 func StorePokemonInDB() {

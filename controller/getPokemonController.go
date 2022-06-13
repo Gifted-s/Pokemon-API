@@ -20,7 +20,7 @@ func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 	}
-	pokemons, err := db.GetPokeMons(customParams)
+	pokemons, err :=  db.GetPokeMons(customParams)
 	if err != nil {
 		resp := models.ErrorResponseStruc{Status: 400, Error: err}
 		err := json.NewEncoder(w).Encode(resp)

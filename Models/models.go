@@ -3,6 +3,8 @@ package models
 import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 type Pokemon struct {
@@ -43,4 +45,9 @@ type Db_Config_Struct struct {
 
 type Collections struct {
 	PokeMons *mongo.Collection
+}
+
+type GetPokemonQueryFormatterStruct struct{
+	QueryCondition []bson.M
+    Options  *options.FindOptions
 }
