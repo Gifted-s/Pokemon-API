@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func SortPokemonsBasedOnEditDistance(pokemonsWithEditDistance []models.PokemonsWithEditDistanceStruct) []models.PokemonsWithEditDistanceStruct {
+func SortPokemonsBasedOnEditDistance(pokemonsWithEditDistance []*models.PokemonsWithEditDistanceStruct) []*models.PokemonsWithEditDistanceStruct {
 	sort.Slice(pokemonsWithEditDistance, func(i, j int) bool {
 		return pokemonsWithEditDistance[i].EditDistance < pokemonsWithEditDistance[j].EditDistance
 	})

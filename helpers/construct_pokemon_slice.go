@@ -4,7 +4,7 @@ import (
 	"pokemon/m/v1/models"
 )
 
-func PokemonSliceConstructor(pokemonsWithEditDistance []models.PokemonsWithEditDistanceStruct) []*models.Pokemon {
+func PokemonSliceConstructor(pokemonsWithEditDistance []*models.PokemonsWithEditDistanceStruct) []*models.Pokemon {
 	pokemonSlice := []*models.Pokemon{}
 	for _, p := range pokemonsWithEditDistance {
 		pokemonSlice = append(pokemonSlice,&models.Pokemon{

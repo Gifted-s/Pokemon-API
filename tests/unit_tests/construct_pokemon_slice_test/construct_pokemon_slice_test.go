@@ -14,7 +14,7 @@ func TestConstructPokemonSlice(t *testing.T) {
 	fakeId1, _ := primitive.ObjectIDFromHex("62a705c3cfb07e0c463b315b")
 	fakeId2, _ := primitive.ObjectIDFromHex("62a705c5cfb07e0c463b315c")
 
-	fakePokemanSliceWithEditDistance := []models.PokemonsWithEditDistanceStruct{
+	fakePokemanSliceWithEditDistance := []*models.PokemonsWithEditDistanceStruct{
 		{EditDistance: 6,
 			Pokemon: models.Pokemon{
 				ID: fakeId1,

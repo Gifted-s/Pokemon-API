@@ -5,7 +5,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"pokemon/m/v1/helpers"
 	"pokemon/m/v1/models"
-	"reflect"
 	"testing"
 )
 
@@ -93,75 +92,4 @@ func Test_Compute_Edit_Distance(t *testing.T) {
 
 	pokemon4ExpectedEditDistance := 6
 	assert.Equal(pokemon4ExpectedEditDistance, pokemonsWithEditDistance[3].EditDistance, "The edit distance between Chaldeans and Cumimank is 6 ")
-
-	expectedPokemanSliceWithEditDistance := []models.PokemonsWithEditDistanceStruct{
-		{EditDistance: 6,
-			Pokemon: models.Pokemon{
-				ID: fakeId1,
-				Name:         "Charmander",
-				Type1:        "Fire",
-				Type2:        "Grass",
-				Total:        100,
-				HP:           50,
-				Attack:       400,
-				Defense:      200,
-				AttackSpeed:  600,
-				DefenseSpeed: 10,
-				Speed:        90,
-				Generation:   1,
-				Lengendary:   false},
-		},
-		{EditDistance: 8,
-			Pokemon: models.Pokemon{
-				ID: fakeId2,
-				Name:         "Ceramic",
-				Type1:        "Fire",
-				Type2:        "Grass",
-				Total:        100,
-				HP:           50,
-				Attack:       456,
-				Defense:      54,
-				AttackSpeed:  600,
-				DefenseSpeed: 10,
-				Speed:        90,
-				Generation:   1,
-				Lengendary:   false},
-		},
-		{EditDistance: 0,
-			Pokemon: models.Pokemon{
-				ID: fakeId3,
-				Name:         "Chaldeans",
-				Type1:        "Water",
-				Type2:        "Grass",
-				Total:        100,
-				HP:           50,
-				Attack:       456,
-				Defense:      54,
-				AttackSpeed:  600,
-				DefenseSpeed: 10,
-				Speed:        90,
-				Generation:   1,
-				Lengendary:   false},
-		},
-		{EditDistance: 6,
-			Pokemon: models.Pokemon{
-				ID: fakeId4,
-				Name:         "Cumimank",
-				Type1:        "Water",
-				Type2:        "Grass",
-				Total:        34,
-				HP:           50,
-				Attack:       456,
-				Defense:      54,
-				AttackSpeed:  600,
-				DefenseSpeed: 10,
-				Speed:        90,
-				Generation:   1,
-				Lengendary:   false},
-		},
-	}
-
-	slicesAreEqual := reflect.DeepEqual(expectedPokemanSliceWithEditDistance, pokemonsWithEditDistance)
-	assert.Equal(true, slicesAreEqual, "The two slices must be equal")
-
 }

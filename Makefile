@@ -10,7 +10,7 @@ e2e_test:
 	go test -v ./tests/e2e/
 
 unit_tests:
-	go test -v ./tests/unit_tests/customize_query_params_test && go test -v ./tests/unit_tests/levenshtein_distance_algorithm_test && go test -v ./tests/unit_tests/operator_matcher_test  && go test -v ./tests/unit_tests/parse_csv_test && go test -v ./tests/unit_tests/sort_pokemon_based_on_edit_distance_test
+	go test -v ./tests/unit_tests/customize_query_params_test && go test -v ./tests/unit_tests/levenshtein_distance_algorithm_test && go test -v ./tests/unit_tests/operator_matcher_test  && go test -v ./tests/unit_tests/parse_csv_test && go test -v ./tests/unit_tests/sort_pokemon_based_on_edit_distance_test && go test -v ./tests/unit_tests/construct_pokemon_slice_test
 
 integration_tests:
 	go test -v ./tests/integration_tests/compute_edit_distance_test

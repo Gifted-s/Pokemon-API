@@ -8,7 +8,7 @@ import (
 
 )
 
-func ParseCSV(rec []string) (models.Pokemon, bool) {
+func ParseCSV(rec []string) (*models.Pokemon, bool) {
 	name := rec[1]
 	type1 := rec[2]
 	type2 := rec[3]
@@ -23,10 +23,10 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 	legendary := rec[12]
 	
 	if legendary=="True" {
-		return models.Pokemon{}, false
+		return &models.Pokemon{}, false
 	}
 	if type1 == "Ghost" || type2 == "Ghost" {
-		return models.Pokemon{}, false
+		return &models.Pokemon{}, false
 	}
 
 	if type1 == "Steel" || type2 == "Steel" {
@@ -49,7 +49,7 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 			defense += 5
 		}
 	}
-	pokemon := models.Pokemon{
+	pokemon := &models.Pokemon{
 		ID:           primitive.NewObjectID(),
 		Name:         name,
 		Type1:        type1,
