@@ -2,10 +2,11 @@ package db
 
 import (
 	"context"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
 	"pokemon/m/v1/models"
 	"time"
+
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 func GetPokeMons(queryBody map[string][]string) ([]models.Pokemon, error) {
@@ -29,13 +30,12 @@ func GetPokeMons(queryBody map[string][]string) ([]models.Pokemon, error) {
 }
 
 func InsertPokemons(pokemons []models.Pokemon) (*mongo.InsertManyResult, error) {
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	pokemonCollection := GetDBCollections().PokeMons
-	pokemonsToInterfaceSlice := make([]interface{}, len(pokemons))
+	pokemonsToInterfaceSlice := []interface{}{}
 	for _, p := range pokemons {
 		pokemonsToInterfaceSlice = append(pokemonsToInterfaceSlice, p)
 	}
-	result, err := pokemonCollection.InsertMany(ctx, pokemonsToInterfaceSlice)
+	result, err := pokemonCollection.InsertMany(context.TODO(), pokemonsToInterfaceSlice)
 	if err != nil {
 		panic(err)
 	}

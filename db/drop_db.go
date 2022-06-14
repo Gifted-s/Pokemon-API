@@ -2,19 +2,19 @@ package db
 
 import (
 	"context"
+	"errors"
 	"fmt"
-	"time"
+
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-func DropDB() string {
+func DropDB() (string, error) {
 	var err error
 	pokemonCollection := GetDBCollections().PokeMons
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	deleteResult, err := pokemonCollection.DeleteMany(ctx, bson.M{})
+	deleteResult, err := pokemonCollection.DeleteMany(context.TODO(), bson.M{})
 	if err != nil {
-		return "Error Droppong DB" + err.Error()
+		return "", errors.New(err.Error())
 	}
-	fmt.Print(deleteResult)
-	return "DB Dropped"
+	fmt.Print("Database Dropped", deleteResult)
+	return "Database Dropped", nil
 }
