@@ -39,6 +39,8 @@ type Configuration struct {
 
 type Db_Config_Struct struct {
 	Pokemon_Collection_Name string
+	Pokemon_Collection_Name_Test string
+	Db_Name_Test                 string
 	Db_Name                 string
 	Fetch_Limit             int
 }

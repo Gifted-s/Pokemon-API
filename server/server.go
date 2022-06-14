@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"pokemon/m/v1/db"
 	"pokemon/m/v1/routers"
-
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )

@@ -27,7 +27,11 @@ func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 				panic(err)
 			}
 		} else {
-			pokemonsWithEditDistance := helpers.ComputeLevenshteinDistance(pokemons, customParams["search"][0])
+			searchText := ""
+			if val, ok := customParams["search"]; ok {
+				searchText = val[0]
+			}
+			pokemonsWithEditDistance := helpers.ComputeLevenshteinDistance(pokemons, searchText)
 			sortedPokemonsBasedonEditDistance := helpers.SortPokemonsBasedOnEditDistance(pokemonsWithEditDistance)
 			resp := models.GetPokemonsSuccessResponseStruc{Status: 200, Pokemons: sortedPokemonsBasedonEditDistance}
 			err := json.NewEncoder(w).Encode(resp)
