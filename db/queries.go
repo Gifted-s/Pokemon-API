@@ -28,7 +28,7 @@ func GetPokeMons(queryBody map[string][]string) ([]models.Pokemon, error) {
 	return pokemonInfo, nil
 }
 
-func InsertPokeMons(pokemons []models.Pokemon) (*mongo.InsertManyResult, error) {
+func InsertPokemons(pokemons []models.Pokemon) (*mongo.InsertManyResult, error) {
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	pokemonCollection := GetDBCollections().PokeMons
 	pokemonsToInterfaceSlice := make([]interface{}, len(pokemons))
