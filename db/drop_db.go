@@ -9,7 +9,6 @@ import (
 )
 
 func DropDB() (string, error) {
-	var err error
 	pokemonCollection := GetDBCollections().PokeMons
 	deleteResult, err := pokemonCollection.DeleteMany(context.TODO(), bson.M{})
 	if err != nil {

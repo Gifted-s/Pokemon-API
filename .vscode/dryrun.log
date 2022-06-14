@@ -1,0 +1,4 @@
+make: Entering directory `/Users/mackbook/Documents/Codebase/pokemon-api-fvxjpe'
+go build -o bin/pokemon-server ./cmd/pokemon/m/v1/main.go
+make: Leaving directory `/Users/mackbook/Documents/Codebase/pokemon-api-fvxjpe'
+ 
