@@ -12,7 +12,7 @@ import (
 
 
 func pokmonRouteTester(t *testing.T) *httpexpect.Expect {
-	err := godotenv.Load("../../.test.env")
+	err := godotenv.Load("../../test.env")
 
 	if err != nil {
 	log.Panic("Error loading .env file", err)
@@ -35,8 +35,6 @@ func pokmonRouteTester(t *testing.T) *httpexpect.Expect {
 
 func TestRouteParams(t *testing.T) {
 	e := pokmonRouteTester(t)
-
-	
 	r := e.GET("/pokemon").
 		WithQuery("hp[gte]", "100").WithQuery("defense[gte]", "200").
 		Expect().
