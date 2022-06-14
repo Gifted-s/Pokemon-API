@@ -17,15 +17,15 @@ type Pokemon struct {
 	Attack       int                `json:"attack" bson:"attack,omitempty"`
 	Defense      int                `json:"defense" bson:"defense,omitempty"`
 	AttackSpeed  int                `json:"attackSpeed" bson:"attackSpeed,omitempty"`
-	DefenceSpeed int                `json:"defenceSpeed" bson:"defenceSpeed,omitempty"`
+	DefenseSpeed int                `json:"defenseSpeed" bson:"defenseSpeed,omitempty"`
 	Speed        int                `json:"speed" bson:"speed,omitempty"`
 	Generation   int                `json:"generation" bson:"generation,omitempty"`
 	Lengendary   bool               `json:"lengendary" bson:"lengendary"`
 }
 
 type GetPokemonsSuccessResponseStruc struct {
-	Status   int                              `json:"status,omitempty"`
-	Pokemons []PokemonsWithEditDistanceStruct `json:"pokemons" bson:"pokemons"`
+	Status   int       `json:"status,omitempty"`
+	Pokemons []*Pokemon `json:"pokemons" bson:"pokemons"`
 }
 
 type ErrorResponseStruc struct {
@@ -38,11 +38,11 @@ type Configuration struct {
 }
 
 type Db_Config_Struct struct {
-	Pokemon_Collection_Name string
+	Pokemon_Collection_Name      string
 	Pokemon_Collection_Name_Test string
 	Db_Name_Test                 string
-	Db_Name                 string
-	Fetch_Limit             int
+	Db_Name                      string
+	Fetch_Limit                  int
 }
 
 type Collections struct {

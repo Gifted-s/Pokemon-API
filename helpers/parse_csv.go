@@ -17,7 +17,7 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 	attack, _ := strconv.Atoi(rec[6])
 	defense, _ := strconv.Atoi(rec[7])
 	attackSpeed, _ := strconv.Atoi(rec[8])
-	defenceSpeed, _ := strconv.Atoi(rec[9])
+	defenseSpeed, _ := strconv.Atoi(rec[9])
 	speed, _ := strconv.Atoi(rec[10])
 	generation, _ := strconv.Atoi(rec[11])
 	legendary := rec[12]
@@ -59,7 +59,7 @@ func ParseCSV(rec []string) (models.Pokemon, bool) {
 		Attack:       attack,
 		Defense:      defense,
 		AttackSpeed:  attackSpeed,
-		DefenceSpeed: defenceSpeed,
+		DefenseSpeed: defenseSpeed,
 		Speed:        speed,
 		Generation:   generation,
 		Lengendary:   false,// Note we don't want pokemons with legendary type

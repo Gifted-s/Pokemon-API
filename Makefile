@@ -25,3 +25,5 @@ compile:
 	GOOS=linux GOARCH=amd64 go build -o bin/pokemon-server-main-linux-amd64 ./cmd/pokemon/m/v1/main.go
 	GOOS=windows GOARCH=amd64 go build -o bin/pokemon-server-main-windows-amd64 ./cmd/pokemon/m/v1/main.go
 
+swagger:
+	GO111MODULE=off swagger generate spec -o ./docs/swagger.yaml --scan-models

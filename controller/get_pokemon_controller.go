@@ -33,7 +33,8 @@ func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 	}
 	pokemonsWithEditDistance := helpers.ComputeLevenshteinDistance(pokemons, searchText)
 	sortedPokemonsBasedonEditDistance := helpers.SortPokemonsBasedOnEditDistance(pokemonsWithEditDistance)
+	pokemonsSliceContructor := helpers.PokemonSliceConstructor(sortedPokemonsBasedonEditDistance)
 	w.WriteHeader(http.StatusOK)
-	resp := models.GetPokemonsSuccessResponseStruc{Status: http.StatusOK, Pokemons: sortedPokemonsBasedonEditDistance}
+	resp := models.GetPokemonsSuccessResponseStruc{Status: http.StatusOK, Pokemons: pokemonsSliceContructor}
 	json.NewEncoder(w).Encode(resp)
 }

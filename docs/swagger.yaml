@@ -1,0 +1,115 @@
+---
+swagger: "2.0"
+info:
+  description: A Pokemon API that fetches pokemons based on query params
+  title: Pokemon API Documentation
+  version: 1.0.0
+consumes:
+- application/json
+produces:
+- application/json
+schemes:
+- http
+host: localhost:8080
+paths:
+  /pokemon:
+    get:
+      tags:
+        - pokemons
+      parameters:
+        - name: hp[comparison_sign]
+          description: Filter based on hp value, comparison_sign can be one of gte-greater than or equal to a specified value, gt-greater than a specified value, lte-less than or equal to a specified value, lt-less than a specified value,  eq-equal to a specified value, ne-not equal to a specified value e.g hp[gte] 
+          in: query
+          type: string
+          format: string
+        - name: defense[comparison_sign]
+          description: Filter based on defense value
+          in: query
+          type: string
+          format: string
+        - name: attack[comparison_sign]
+          description: Filter based on attack value
+          in: query
+          type: string
+          format: string
+        - name: page
+          description: get a particular page
+          in: query
+          type: string
+          format: string
+          default: 1
+        - name: search
+          in: query
+          type: string
+          format: string
+      responses:
+        200:
+          description: List all Pokemons according to the filter, search value and page
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/item"
+        400:
+          description: Bad Request Error
+          schema:
+            $ref: "#/definitions/error"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/error"
+definitions:
+  pokemon:
+    type: object
+    required:
+      - description
+    properties:
+      _id:
+        type: string
+        format: string
+        readOnly: true
+      name:
+        type: string
+        format: string
+      type1:
+        type: string
+        format: string
+      type2:
+        type: string
+        format: string
+      total:
+        type: integer
+        format: int64
+      hp:
+        type: integer
+        format: int64
+      attack:
+        type: integer
+        format: int64
+      defense:
+        type: integer
+        format: int64
+      attackSpeed:
+        type: integer
+        format: int64
+      defenseSpeed:
+        type: integer
+        format: int64
+      speed:
+        type: integer
+        format: int64
+      generation:
+        type: integer
+        format: int64
+      lengendary:
+        type: boolean
+        format: boolean
+  error:
+    type: object
+    required:
+      - message
+    properties:
+      code:
+        type: integer
+        format: int64
+      message:
+        type: string
