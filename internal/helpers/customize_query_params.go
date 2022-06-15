@@ -2,10 +2,18 @@ package helpers
 
 import (
 	"errors"
-	"strings"
 	"strconv"
+	"strings"
 )
 
+// CustomizeQueryParams is responsible for constructing a customized request query object from the default one provided by mux framework.
+// For example: if the query params from mux is
+//
+// map["attack[gte]":["100"] "defense[gte]":["200"] "hp[gte]":["100"] "page":["1"] "search":["Steelix"]]
+//
+// The function returns
+//
+// map["attack":["$gte", "100"] "defense":["$gte", "200"] "hp":["$gte", "100"] "page":["1"] "search":["Steelix"]]
 func CustomizeQueryParams(queryParams map[string][]string) (map[string][]string, error) {
 	customParams := map[string][]string{}
 	for k, v := range queryParams {
@@ -41,6 +49,5 @@ func CustomizeQueryParams(queryParams map[string][]string) (map[string][]string,
 		}
 		customParams[key] = value
 	}
-
 	return customParams, nil
 }

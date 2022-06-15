@@ -7,7 +7,21 @@ import (
 	"math"
 
 )
-
+// ParseCSV is responsible for taking a pokemon represented as a string and converting it to a pokemon model
+//
+// The following instructions are considered during the conversion.
+//
+// If Pokémon is of type Legendary it returns a empty pokemon model and false meaning this pokemon should be excluded.
+//
+// If Pokémon is of type Ghost it returns a empty pokemon model and false meaning this pokemon should be excluded.
+//
+// If Pokémon is of Type: Steel, the  HP value is doubled.
+//
+// If Pokémon is of Type: Fire, the Attack value is lowered by 10%.
+//
+// If Pokémon is of Type: Bug or Flying, Attack Speed is increased by 10%.
+//
+// if Pokémon name start with the letter G, we add +5 Defense for every letter in the name (excluding G).
 func ParseCSV(rec []string) (*models.Pokemon, bool) {
 	name := rec[1]
 	type1 := rec[2]

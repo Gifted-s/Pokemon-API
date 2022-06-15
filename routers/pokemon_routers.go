@@ -5,7 +5,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-
+// PokemonRouter is responsible for handling request for various paths, it return a mux router type 
 func PokemonRouter(r *mux.Router) *mux.Router {
 	r.HandleFunc("/pokemon", controller.GetPokemonsController).Methods("GET")
 	return r

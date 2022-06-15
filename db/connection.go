@@ -9,6 +9,7 @@ import (
 
 )
 
+// ConnectMongoDB connects to MongoDB atlas cloud using the provided details and returns a new client
 func ConnectMongoDB() *mongo.Client {
 	var dbName = os.Getenv("DB_USERNAME")
     var dbPassword = os.Getenv("DB_PASSWORD")

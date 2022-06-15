@@ -8,7 +8,7 @@ import (
 )
 
 // Pokemon is struct that represents the model of a pokemon. 
-// Pokemon can be marshed to BSON to be stored in Database or marshed to JSON to be sent through HTTP 
+// Pokemon can be marshalled to BSON to be stored in Database or marshed to JSON to be sent through HTTP 
 type Pokemon struct {
 	ID           primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
 	Name         string             `json:"name" bson:"name,omitempty"`
@@ -31,16 +31,19 @@ type GetPokemonsSuccessResponseStruc struct {
 	Pokemons []*Pokemon `json:"pokemons" bson:"pokemons"`
 }
 
-// ErrorResponseStruc is used to structure error response body
+// ErrorResponseStruc is used to structure error response body.
+// ErrorResponseStruc can be marshalled to JSON
 type ErrorResponseStruc struct {
 	Status   int    `json:"status,omitempty"`
 	ErrorMsg string `json:"error"`
 }
 
+// Configuration represent the model for app config
 type Configuration struct {
 	Db_Config Db_Config_Struct
 }
 
+// Db_Config_Struct is used to model the Database Config, it is includes various db collection names, db names and also fetch size for each query
 type Db_Config_Struct struct {
 	Pokemon_Collection_Name      string
 	Pokemon_Collection_Name_Test string
@@ -49,16 +52,19 @@ type Db_Config_Struct struct {
 	Fetch_Limit                  int
 }
 
+// Collections is used to represent all the various collections we have in the database
 type Collections struct {
 	PokeMons *mongo.Collection
 }
 
+// GetPokemonQueryFormatterStruct is used to model the format the query to fetch pokemon from database
 type GetPokemonQueryFormatterStruct struct {
 	QueryCondition []bson.M
 	Options        *options.FindOptions
 }
 
+// PokemonsWithEditDistanceStruct is used to model a pokemon and its edit distance from the search text  
 type PokemonsWithEditDistanceStruct struct {
-	EditDistance int `json:"editDistance"`
+	EditDistance int
 	Pokemon
 }

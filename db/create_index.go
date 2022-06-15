@@ -8,7 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
-
+// CreateIndex creates the index with keys hp, defense and attack
 func CreateIndex () {
 	pokemonCollection := GetDBCollections().PokeMons
 	model := mongo.IndexModel{Keys: bson.D{primitive.E{Key: "hp", Value:  -1},  primitive.E{Key:"attack", Value:  -1}, {Key: "defense", Value:  -1} }}

@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
-
+// GetPokemonQueryFormatter takes in a query body and construct a MongoDB query and MongoDb query option from it. It returns queryFormat Struct
 func GetPokemonQueryFormatter(queryBody map[string][]string) *models.GetPokemonQueryFormatterStruct {
 	queryConditions := []bson.M{}
 	var page int

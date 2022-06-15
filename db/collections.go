@@ -5,7 +5,7 @@ import (
 	"pokemon/m/v1/configs"
 	"pokemon/m/v1/models"
 )
-
+// GetDBCollections returns all the collections that we have in the database
 func GetDBCollections() models.Collections {
 	dbClient := ConnectMongoDB()
 	var dbName string

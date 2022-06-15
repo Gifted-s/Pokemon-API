@@ -8,6 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
+// DropDB clears all the documents that we have in the pokemons collection
 func DropDB() (string, error) {
 	pokemonCollection := GetDBCollections().PokeMons
 	deleteResult, err := pokemonCollection.DeleteMany(context.TODO(), bson.M{})

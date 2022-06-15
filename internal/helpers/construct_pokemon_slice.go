@@ -4,6 +4,7 @@ import (
 	"pokemon/m/v1/models"
 )
 
+// PokemonSliceConstructor takes pokemons, and returns the pokemons but removes the edit distance field
 func PokemonSliceConstructor(pokemonsWithEditDistance []*models.PokemonsWithEditDistanceStruct) []*models.Pokemon {
 	pokemonSlice := []*models.Pokemon{}
 	for _, p := range pokemonsWithEditDistance {

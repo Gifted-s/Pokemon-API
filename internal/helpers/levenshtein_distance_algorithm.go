@@ -1,5 +1,13 @@
 package helpers
 
+// MinDistance: Given two strings word1 and word2, the function return the minimum number of operations required to convert word1 to word2.
+// Example 1:
+// Input: word1 = "horse", word2 = "ros"
+// Output: 3
+// Explanation: 
+// horse -> rorse (replace 'h' with 'r')
+// rorse -> rose (remove 'r')
+// rose -> ros (remove 'e')
 func MinDistance(word1 string, word2 string) int {
 	// create 2 dimensional slices
 	cache := [][]int{}

@@ -4,13 +4,13 @@ import (
 	"context"
 	"encoding/csv"
 	"pokemon/m/v1/db"
-	//"fmt"
 	"fmt"
 	"io"
 	"log"
 	"os"
 )
 
+// StorePokemonInDB is responsible for pulling each row from the CSV file, converting them to a pokemon model and inserting the pokemon into the Database
 func StorePokemonInDB() {
 	pokemonCollection := db.GetDBCollections().PokeMons
 	// open file

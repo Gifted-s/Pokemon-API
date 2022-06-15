@@ -4,11 +4,12 @@ import (
 	"context"
 	"pokemon/m/v1/models"
 	"time"
-
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
+// GetPokeMons is reponsible for fetching pokemons from the database based on the query passed.
+// It also returns an error in case an error occur
 func GetPokeMons(queryBody map[string][]string) ([]models.Pokemon, error) {
 	pokemonCollection := GetDBCollections().PokeMons
 	queryFormat := GetPokemonQueryFormatter(queryBody)
@@ -29,6 +30,7 @@ func GetPokeMons(queryBody map[string][]string) ([]models.Pokemon, error) {
 	return pokemonInfo, nil
 }
 
+// InsertPokemons is responsibe for inserting pokemons into the Database. It returns insert result and error.
 func InsertPokemons(pokemons []models.Pokemon) (*mongo.InsertManyResult, error) {
 	pokemonCollection := GetDBCollections().PokeMons
 	pokemonsToInterfaceSlice := []interface{}{}

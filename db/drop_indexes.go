@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 )
-
+// DropIndexes removes all the indexes on the pokemon collection
 func DropIndexes () {
 	pokemonCollection := GetDBCollections().PokeMons
 	_, err := pokemonCollection.Indexes().DropAll(context.TODO())

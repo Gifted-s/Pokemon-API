@@ -1,5 +1,6 @@
 package helpers
 
+// URLOperatorToMongoDBOperatorMatcher returns a map that maps comparison operator from request query to mongodb operator 
 func URLOperatorToMongoDBOperatorMatcher()map[string]string{
   operatorMap := map[string]string{
    "gte": "$gte",
