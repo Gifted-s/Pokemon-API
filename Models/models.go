@@ -7,6 +7,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+// Pokemon is struct that represents the model of a pokemon. 
+// Pokemon can be marshed to BSON to be stored in Database or marshed to JSON to be sent through HTTP 
 type Pokemon struct {
 	ID           primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
 	Name         string             `json:"name" bson:"name,omitempty"`
@@ -23,11 +25,13 @@ type Pokemon struct {
 	Lengendary   bool               `json:"lengendary" bson:"lengendary"`
 }
 
+// GetPokemonsSuccessResponseStruc is used to structure success response body for a get pokemon operation
 type GetPokemonsSuccessResponseStruc struct {
 	Status   int       `json:"status,omitempty"`
 	Pokemons []*Pokemon `json:"pokemons" bson:"pokemons"`
 }
 
+// ErrorResponseStruc is used to structure error response body
 type ErrorResponseStruc struct {
 	Status   int    `json:"status,omitempty"`
 	ErrorMsg string `json:"error"`

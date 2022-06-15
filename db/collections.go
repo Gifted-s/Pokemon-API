@@ -19,7 +19,11 @@ func GetDBCollections() models.Collections {
 	case "TEST":
 		dbName = configs.Config.Db_Config.Db_Name_Test
 		pokeMonCollectionName = configs.Config.Db_Config.Pokemon_Collection_Name_Test
+	case "PRODUCTION":
+		dbName = configs.Config.Db_Config.Db_Name
+		pokeMonCollectionName = configs.Config.Db_Config.Pokemon_Collection_Name
 	}
+
 	pokemons := dbClient.Database(dbName).Collection(pokeMonCollectionName)
 	var collections models.Collections
 	collections.PokeMons = pokemons

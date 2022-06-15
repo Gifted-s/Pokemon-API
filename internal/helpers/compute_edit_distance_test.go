@@ -1,9 +1,8 @@
-package compute_edit_distance_test
+package helpers
 
 import (
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"pokemon/m/v1/helpers"
 	"pokemon/m/v1/models"
 	"testing"
 )
@@ -78,7 +77,7 @@ func Test_Compute_Edit_Distance(t *testing.T) {
 			Lengendary:   false,
 		},
 	}
-	pokemonsWithEditDistance := helpers.ComputeLevenshteinDistance(fakeRandomPokemons, searchWord)
+	pokemonsWithEditDistance := ComputeLevenshteinDistance(fakeRandomPokemons, searchWord)
 
 	// Test individual pokeman name edit distance
 	pokemon1ExpectedEditDistance := 6

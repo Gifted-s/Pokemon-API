@@ -9,13 +9,10 @@ run:
 e2e_test:
 	go test -v ./tests/e2e/
 
-unit_tests:
-	go test -v ./tests/unit_tests/customize_query_params_test && go test -v ./tests/unit_tests/levenshtein_distance_algorithm_test && go test -v ./tests/unit_tests/operator_matcher_test  && go test -v ./tests/unit_tests/parse_csv_test && go test -v ./tests/unit_tests/sort_pokemon_based_on_edit_distance_test && go test -v ./tests/unit_tests/construct_pokemon_slice_test
+all_unit_and_integration_tests:
+	go test -v ./internal/helpers
 
-integration_tests:
-	go test -v ./tests/integration_tests/compute_edit_distance_test
-    
-test: e2e_test  unit_tests integration_tests
+test: e2e_test  all_unit_and_integration_tests
 
 
 compile:
@@ -26,10 +23,10 @@ compile:
 	GOOS=windows GOARCH=amd64 go build -o bin/pokemon-server-main-windows-amd64 ./cmd/pokemon/m/v1/main.go
 
 swagger:
-	GO111MODULE=off swagger generate spec -o ./docs/swagger.yaml --scan-models
+	GO111MODULE=off swagger generate spec -o ./api/swagger.yaml --scan-models
 
 api_doc:
 		@echo "Ensure you have go-swagger installed if not installed already"
 		@echo "To install go-swaggger: run [brew tap go-swagger/go-swagger]"
 		@echo "Then run: run [brew install go-swagger]"
-		swagger serve ./docs/swagger.yaml
+		swagger serve ./api/swagger.yaml

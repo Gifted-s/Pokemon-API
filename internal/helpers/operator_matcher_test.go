@@ -1,7 +1,6 @@
-package operator_matcher_test
+package helpers
 
 import (
-	"pokemon/m/v1/helpers"
 	"testing"
 	"github.com/stretchr/testify/assert"
 	"reflect"
@@ -12,7 +11,7 @@ import (
 func Test_Operator_Matcher(t *testing.T) {
 	assert := assert.New(t)
 	
-	customParams := helpers.URLOperatorToMongoDBOperatorMatcher()
+	customParams := URLOperatorToMongoDBOperatorMatcher()
     expectedCustomparams := map[string]string{
 	    "gte": "$gte",
 		"lte": "$lte",
