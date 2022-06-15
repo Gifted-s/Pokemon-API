@@ -27,3 +27,9 @@ compile:
 
 swagger:
 	GO111MODULE=off swagger generate spec -o ./docs/swagger.yaml --scan-models
+
+api_doc:
+		@echo "Ensure you have go-swagger installed if not installed already"
+		@echo "To install go-swaggger: run [brew tap go-swagger/go-swagger]"
+		@echo "Then run: run [brew install go-swagger]"
+		swagger serve ./docs/swagger.yaml

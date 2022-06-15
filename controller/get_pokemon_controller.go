@@ -8,6 +8,8 @@ import (
 	"pokemon/m/v1/models"
 )
 
+// GetPokemonsController sends an HTTP success response that contains pokemons that matches the request query params.
+// Sends an error status and error message if an error was encountered. 
 func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	queryParams := r.URL.Query()

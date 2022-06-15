@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: A Pokemon API that fetches pokemons based on query params
+  description: A Pokemon API that fetches pokemons
   title: Pokemon API Documentation
   version: 1.0.0
 consumes:
@@ -44,11 +44,9 @@ paths:
           format: string
       responses:
         200:
-          description: List all Pokemons according to the filter, search value and page
+          description: List all pokemons according to query
           schema:
-            type: array
-            items:
-              $ref: "#/definitions/item"
+            $ref: '#/components/schemas/responseObj'
         400:
           description: Bad Request Error
           schema:
@@ -103,13 +101,21 @@ definitions:
       lengendary:
         type: boolean
         format: boolean
+  responseObj:
+    properties:
+      status:
+        type: integer
+      pokemons:
+        type: array
+        items:
+          $ref: '#/components/schemas/pokemon'
   error:
     type: object
     required:
       - message
     properties:
-      code:
+      status:
         type: integer
         format: int64
-      message:
+      error:
         type: string
