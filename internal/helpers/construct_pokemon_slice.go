@@ -25,6 +25,7 @@ func PokemonSliceConstructor(pokemonsWithEditDistance []*models.PokemonsWithEdit
 			Legendary:   false,
 		})
 	}
+	// get pokemons within a range based on page number
 	pokemonSliceBasedOnPage := GetPage(pokemonSlice, page)
 	return pokemonSliceBasedOnPage
 }
