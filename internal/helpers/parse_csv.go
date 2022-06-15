@@ -76,7 +76,7 @@ func ParseCSV(rec []string) (*models.Pokemon, bool) {
 		DefenseSpeed: defenseSpeed,
 		Speed:        speed,
 		Generation:   generation,
-		Lengendary:   false,// Note we don't want pokemons with legendary type
+		Legendary:   false,// Note we don't want pokemons with legendary type
 	}
 	return pokemon, true
 

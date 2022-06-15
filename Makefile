@@ -3,7 +3,7 @@
 build:
 	go build -o bin/pokemon-server ./cmd/pokemon/m/v1/main.go
 
-run:
+start_server:
 	go run ./cmd/pokemon/m/v1/main.go
 
 e2e_test:
@@ -23,7 +23,7 @@ compile:
 	GOOS=windows GOARCH=amd64 go build -o bin/pokemon-server-main-windows-amd64 ./cmd/pokemon/m/v1/main.go
 
 swagger:
-	GO111MODULE=off swagger generate spec -o ./api/swagger.yaml --scan-models
+	swagger generate spec -o ./api/swagger.yaml --scan-models
 
 api_doc:
 		@echo "Ensure you have go-swagger installed if not installed already"

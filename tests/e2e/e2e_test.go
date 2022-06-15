@@ -99,7 +99,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId2,
@@ -114,7 +114,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 		}
 
@@ -204,7 +204,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId2,
@@ -219,7 +219,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 		}
 
@@ -308,7 +308,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId2,
@@ -323,7 +323,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 		}
 
@@ -414,7 +414,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId2,
@@ -429,7 +429,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 		}
 
@@ -471,7 +471,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId2,
@@ -486,7 +486,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId3,
@@ -501,7 +501,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 		}
 
@@ -547,7 +547,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId2,
@@ -562,7 +562,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 			{
 				ID:           fakeId3,
@@ -577,7 +577,7 @@ func TestPokemonAPI(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 			},
 		}
 

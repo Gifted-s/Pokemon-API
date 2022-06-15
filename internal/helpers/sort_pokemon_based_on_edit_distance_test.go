@@ -32,7 +32,7 @@ func Test_Sort_Pokemon_Based_On_Edit_Distance(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false},
+				Legendary:   false},
 		},
 		{EditDistance: 8,
 			Pokemon: models.Pokemon{
@@ -48,7 +48,7 @@ func Test_Sort_Pokemon_Based_On_Edit_Distance(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false},
+				Legendary:   false},
 		},
 		{EditDistance: 0,
 			Pokemon: models.Pokemon{
@@ -64,7 +64,7 @@ func Test_Sort_Pokemon_Based_On_Edit_Distance(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false},
+				Legendary:   false},
 		},
 		{EditDistance: 6,
 			Pokemon: models.Pokemon{
@@ -80,7 +80,7 @@ func Test_Sort_Pokemon_Based_On_Edit_Distance(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false},
+				Legendary:   false},
 		},
 	}
 

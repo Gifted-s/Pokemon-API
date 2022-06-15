@@ -21,7 +21,7 @@ func PokemonSliceConstructor(pokemonsWithEditDistance []*models.PokemonsWithEdit
 			DefenseSpeed: p.DefenseSpeed,
 			Speed:        p.Speed,
 			Generation:   p.Generation,
-			Lengendary:   false,
+			Legendary:   false,
 		})
 	}
 	return pokemonSlice

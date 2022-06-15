@@ -31,7 +31,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId2,
@@ -46,7 +46,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId3,
@@ -61,7 +61,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId4,
@@ -76,7 +76,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId5,
@@ -91,7 +91,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId6,
@@ -106,7 +106,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId7,
@@ -121,7 +121,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 
 		{
@@ -137,7 +137,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 
 		{
@@ -153,7 +153,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId10,
@@ -168,7 +168,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 
 		{
@@ -184,7 +184,7 @@ func CreateFakePokemons() []models.Pokemon {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 	}
 	return fakeRandomPokemons

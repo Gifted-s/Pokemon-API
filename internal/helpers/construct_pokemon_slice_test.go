@@ -28,7 +28,7 @@ func TestConstructPokemonSlice(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false},
+				Legendary:   false},
 		},
 		{EditDistance: 8,
 			Pokemon: models.Pokemon{
@@ -44,7 +44,7 @@ func TestConstructPokemonSlice(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false},
+				Legendary:   false},
 		},
 	}
 
@@ -64,7 +64,7 @@ func TestConstructPokemonSlice(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 		},
 		{
 				ID: fakeId2,
@@ -79,7 +79,7 @@ func TestConstructPokemonSlice(t *testing.T) {
 				DefenseSpeed: 10,
 				Speed:        90,
 				Generation:   1,
-				Lengendary:   false,
+				Legendary:   false,
 		},
 	}
     sortedPokemons := PokemonSliceConstructor(fakePokemanSliceWithEditDistance)

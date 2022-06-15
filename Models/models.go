@@ -22,7 +22,7 @@ type Pokemon struct {
 	DefenseSpeed int                `json:"defenseSpeed" bson:"defenseSpeed,omitempty"`
 	Speed        int                `json:"speed" bson:"speed,omitempty"`
 	Generation   int                `json:"generation" bson:"generation,omitempty"`
-	Lengendary   bool               `json:"lengendary" bson:"lengendary"`
+	Legendary   bool               `json:"legendary" bson:"legendary"`
 }
 
 // GetPokemonsSuccessResponseStruc is used to structure success response body for a get pokemon operation

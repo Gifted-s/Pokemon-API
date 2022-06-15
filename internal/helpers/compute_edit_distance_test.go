@@ -29,7 +29,7 @@ func Test_Compute_Edit_Distance(t *testing.T) {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId2,
@@ -44,7 +44,7 @@ func Test_Compute_Edit_Distance(t *testing.T) {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId3,
@@ -59,7 +59,7 @@ func Test_Compute_Edit_Distance(t *testing.T) {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 		{
 			ID:           fakeId4,
@@ -74,7 +74,7 @@ func Test_Compute_Edit_Distance(t *testing.T) {
 			DefenseSpeed: 10,
 			Speed:        90,
 			Generation:   1,
-			Lengendary:   false,
+			Legendary:   false,
 		},
 	}
 	pokemonsWithEditDistance := ComputeLevenshteinDistance(fakeRandomPokemons, searchWord)

@@ -8,7 +8,8 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
-// SetupServer is reponsible for starting the server, it returns bool and error type. 
+
+// SetupServer is reponsible for starting the server, it returns bool and error type.
 // If startup was successful, then it returns true and nil otherwise it returns false and error
 func SetupServer() (bool, error) {
 	r := mux.NewRouter()
