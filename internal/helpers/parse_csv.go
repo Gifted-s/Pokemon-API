@@ -60,7 +60,9 @@ func ParseCSV(rec []string) (*models.Pokemon, bool) {
 	if char := name[0:1]; char == "G" {
 		nameRunes := []rune(name)
 		for i := 1; i < len(nameRunes); i++ {
-			defense += 5
+			if string(nameRunes[i]) !=""{
+				defense += 5
+			}
 		}
 	}
 	pokemon := &models.Pokemon{
