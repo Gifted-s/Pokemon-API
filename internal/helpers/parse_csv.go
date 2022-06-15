@@ -1,12 +1,14 @@
 package helpers
 
 import (
+	"math"
 	"pokemon/m/v1/models"
 	"strconv"
-	"go.mongodb.org/mongo-driver/bson/primitive"
-	"math"
+	"strings"
 
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
+
 // ParseCSV is responsible for taking a pokemon represented as a string and converting it to a pokemon model
 //
 // The following instructions are considered during the conversion.
@@ -35,8 +37,8 @@ func ParseCSV(rec []string) (*models.Pokemon, bool) {
 	speed, _ := strconv.Atoi(rec[10])
 	generation, _ := strconv.Atoi(rec[11])
 	legendary := rec[12]
-	
-	if legendary=="True" {
+
+	if legendary == "True" {
 		return &models.Pokemon{}, false
 	}
 	if type1 == "Ghost" || type2 == "Ghost" {
@@ -60,7 +62,8 @@ func ParseCSV(rec []string) (*models.Pokemon, bool) {
 	if char := name[0:1]; char == "G" {
 		nameRunes := []rune(name)
 		for i := 1; i < len(nameRunes); i++ {
-			if string(nameRunes[i]) !=""{
+			// Ensure string is not empty before adding 5 to defense
+			if strings.TrimSpace(string(nameRunes[i])) != "" {
 				defense += 5
 			}
 		}
@@ -78,7 +81,7 @@ func ParseCSV(rec []string) (*models.Pokemon, bool) {
 		DefenseSpeed: defenseSpeed,
 		Speed:        speed,
 		Generation:   generation,
-		Legendary:   false,// Note we don't want pokemons with legendary type
+		Legendary:    false, // Note we don't want pokemons with legendary type
 	}
 	return pokemon, true
 

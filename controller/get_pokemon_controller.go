@@ -40,7 +40,11 @@ func GetPokemonsController(w http.ResponseWriter, r *http.Request) {
 	// sort pokemons based on edit distance
 	sortedPokemonsBasedonEditDistance := helpers.SortPokemonsBasedOnEditDistance(pokemonsWithEditDistance)
 	// create pokemon slice to be returned in response body
-	pokemonsSliceContructor := helpers.PokemonSliceConstructor(sortedPokemonsBasedonEditDistance)
+	page := "1"
+	if v, ok := customParams["search"]; ok{
+      page =v[0]
+	}
+	pokemonsSliceContructor := helpers.PokemonSliceConstructor(sortedPokemonsBasedonEditDistance, page)
 	w.WriteHeader(http.StatusOK)
 	// create success response body
 	resp := models.GetPokemonsSuccessResponseStruc{Status: http.StatusOK, Pokemons: pokemonsSliceContructor}

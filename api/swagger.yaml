@@ -98,7 +98,7 @@ definitions:
       generation:
         type: integer
         format: int64
-      lengendary:
+      legendary:
         type: boolean
         format: boolean
   responseObj:

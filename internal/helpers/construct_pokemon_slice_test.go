@@ -82,7 +82,7 @@ func TestConstructPokemonSlice(t *testing.T) {
 				Legendary:   false,
 		},
 	}
-    sortedPokemons := PokemonSliceConstructor(fakePokemanSliceWithEditDistance)
+    sortedPokemons := PokemonSliceConstructor(fakePokemanSliceWithEditDistance, "1")
 	slicesAreEqual := reflect.DeepEqual(expectedPokemonSlice, sortedPokemons)
 	assert.Equal(true, slicesAreEqual, "The two slices must be equal")
 

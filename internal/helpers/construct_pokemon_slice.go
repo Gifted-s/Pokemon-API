@@ -5,7 +5,8 @@ import (
 )
 
 // PokemonSliceConstructor takes pokemons, and returns the pokemons but removes the edit distance field
-func PokemonSliceConstructor(pokemonsWithEditDistance []*models.PokemonsWithEditDistanceStruct) []*models.Pokemon {
+func PokemonSliceConstructor(pokemonsWithEditDistance []*models.PokemonsWithEditDistanceStruct, page string) []*models.Pokemon {
+	
 	pokemonSlice := []*models.Pokemon{}
 	for _, p := range pokemonsWithEditDistance {
 		pokemonSlice = append(pokemonSlice,&models.Pokemon{
@@ -24,5 +25,6 @@ func PokemonSliceConstructor(pokemonsWithEditDistance []*models.PokemonsWithEdit
 			Legendary:   false,
 		})
 	}
-	return pokemonSlice
+	pokemonSliceBasedOnPage := GetPage(pokemonSlice, page)
+	return pokemonSliceBasedOnPage
 }
