@@ -1,1 +1,1 @@
-{"buildTargets":["all_unit_and_integration_tests","api_doc","build","compile","e2e_test","run","swagger","test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["all_unit_and_integration_tests","api_doc","build","compile","e2e_test","start_server","swagger","test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
